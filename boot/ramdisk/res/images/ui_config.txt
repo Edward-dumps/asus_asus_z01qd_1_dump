@@ -1,0 +1,3 @@
+icon_install 913
+updating_message 1187
+progressbar 1140

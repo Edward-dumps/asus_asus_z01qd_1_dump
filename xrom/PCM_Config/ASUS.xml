@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <job_id>67056</job_id>
+  <config_version>2</config_version>
+  <app_list>
+    <app_name name="Blibli" version="5.5.5" type="Third-party" />
+    <app_name name="Caping" version="5.1.2" type="Third-party" />
+    <app_name name="Detik" version="5.5.0" type="Third-party" />
+    <app_name name="JakartaBaca" version="3.4.0.6" type="Third-party" />
+    <app_name name="JDID" version="5.5.1" type="Third-party" />
+    <app_name name="Matahari" version="3.3.0.27" type="Third-party" />
+    <app_name name="PicMix" version="7.9.3.1" type="Third-party" />
+    <app_name name="YandexBrowser" version="20.4.1.146" type="Third-party" />
+  </app_list>
+</resources>

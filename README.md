@@ -1,0 +1,14 @@
+# WW_Phone-user 9 PKQ1.190101.001 16.0420.2009.39-0 release-keys
+- manufacturer: asus
+- platform: sdm845
+- codename: ASUS_Z01QD_1
+- flavor: WW_Phone-user
+- release: 9
+- id: PKQ1.190101.001
+- incremental: 16.0420.2009.39-0
+- tags: release-keys
+- fingerprint: asus/WW_Z01QD/ASUS_Z01QD_1:9/PKQ1.190101.001/16.0420.2009.39-0:user/release-keys
+- is_ab: true
+- brand: asus
+- branch: WW_Phone-user-9-PKQ1.190101.001-16.0420.2009.39-0-release-keys
+- repo: asus_asus_z01qd_1_dump
