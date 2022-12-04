@@ -1,0 +1,28 @@
+#!/vendor/bin/sh
+
+OTP="/proc/driver/rear_otp"
+
+string=""
+Z1_High=0
+Z1_Low=0
+Z2_High=0
+Z2_Low=0
+
+if [ $# -ne 1 ]; then
+	echo "Usage: adb shell $0 CameraID (0~2)"
+	exit 1
+fi
+
+if [ $1 -ne 0 ]; then
+    echo "Invalid CameraID! Only Camera 0 has EEPROM on ZS600KL project"
+    exit 1
+fi
+
+if [ $1 -eq 0 ]; then
+    string=$(cat $OTP)
+    Z1_High=$(echo $string | cut -d" " -f 25)
+    Z1_Low=$(echo $string | cut -d" " -f 26)
+    Z2_High=$(echo $string | cut -d" " -f 27)
+    Z2_Low=$(echo $string | cut -d" " -f 28)
+    echo $Z1_High $Z1_Low $Z2_High $Z2_Low
+fi

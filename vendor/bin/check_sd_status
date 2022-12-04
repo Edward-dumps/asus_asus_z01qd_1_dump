@@ -1,0 +1,1 @@
+cat /sys/devices/platform/soc/8804000.sdhci/cd_gpio_status

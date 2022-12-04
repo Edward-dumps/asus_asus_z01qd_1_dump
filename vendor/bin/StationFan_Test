@@ -1,0 +1,50 @@
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (On), 2 (RPM)"
+	exit
+fi
+
+if [ "$CMD" -lt "0" -o "$CMD" -gt "2" ]; then
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (On), 2 (RPM)"
+	exit
+fi
+if [ "$CMD" -eq "0" ]; then
+	echo c 0 > /sys/class/ec_hid/dongle/device/set_gpio
+	echo c > /sys/class/ec_hid/dongle/device/get_gpio
+	sleep 1
+	result=`cat /sys/class/ec_hid/dongle/device/get_gpio`
+	if [ "$result" == "0x0" ]; then
+		echo PASS
+	else
+		echo FAIL
+	fi
+
+elif [ "$CMD" -eq "1" ]; then
+	echo c 1 > /sys/class/ec_hid/dongle/device/set_gpio
+	echo c > /sys/class/ec_hid/dongle/device/get_gpio
+	echo 0 0 > /sys/class/ec_hid/dongle/device/freq
+	echo ff 7f > /sys/class/ec_hid/dongle/device/duty
+	echo 1 > /sys/class/ec_hid/dongle/device/pwm
+	sleep 1
+	result=`cat /sys/class/ec_hid/dongle/device/rpm`
+	if [ "$result" -eq "0" ] || [ "$result" -eq "7650" ]; then
+		echo FAIL
+	else
+		echo PASS
+	fi
+
+elif [ "$CMD" -eq "2" ]; then
+	echo c 1 > /sys/class/ec_hid/dongle/device/set_gpio
+	echo c > /sys/class/ec_hid/dongle/device/get_gpio
+	echo 0 0 > /sys/class/ec_hid/dongle/device/freq
+	echo ff 7f > /sys/class/ec_hid/dongle/device/duty
+	echo 1 > /sys/class/ec_hid/dongle/device/pwm
+	sleep 1
+	result=`cat /sys/class/ec_hid/dongle/device/rpm`
+	echo $result
+fi
+
+

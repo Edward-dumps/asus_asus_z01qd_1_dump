@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+status=`getprop ro.boot.id.prj`
+
+if [ "$status" -eq "6" ]; then 
+	echo ZS600KL
+
+else 
+	echo Unknown
+	
+fi

@@ -1,0 +1,17 @@
+#!/vendor/bin/sh
+cmd=`getprop persist.vendor.asus.fp.test.cmd`
+
+status="FAIL"
+if [ "$cmd" -eq "1" ]; then
+	status=`/vendor/bin/FpCmd 0`
+elif [ "$cmd" -eq "2" ]; then
+	status=`/vendor/bin/FpCmd 1`
+fi
+
+if [ "$status" = "PASS" ]; then
+	echo PASS
+	setprop persist.vendor.asus.fp.test.result 1
+else
+	echo FAIL
+	setprop persist.vendor.asus.fp.test.result 0
+fi

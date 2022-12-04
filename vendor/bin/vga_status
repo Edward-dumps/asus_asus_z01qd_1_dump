@@ -1,0 +1,12 @@
+#ASUS_BSP Byron code in Asus_camera_sensor.c
+if [ -f "/sys/camera_sensor/status/front" ]; then
+	vga_status=`cat /sys/camera_sensor/status/front`
+	if [ ${vga_status:0:3} = "ACK" ]; then
+    	echo "1"
+	else
+    	echo "0"
+        fi
+else
+	echo "0"
+fi
+

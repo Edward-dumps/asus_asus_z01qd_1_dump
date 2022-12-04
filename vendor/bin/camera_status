@@ -1,0 +1,31 @@
+#!/system/bin/sh
+#ASUS_BSP Byron code in Asus_camera_sensor.c
+case $1 in
+"0")
+	if   [ -f "/sys/camera_sensor/status/rear" ];
+	then
+	camera_status=`cat /sys/camera_sensor/status/rear`
+	if [ ${camera_status:0:3} = "ACK" ]; then
+    		echo "1"
+	else
+    		echo "0"
+        fi
+	else
+	echo "0"
+	fi
+;;
+"1")
+	if   [ -f "/sys/camera_sensor/status/rear2" ];
+	then
+	camera_status_2=`cat /sys/camera_sensor/status/rear2`
+	if [ ${camera_status_2:0:3} = "ACK" ]; then
+    		echo "1"
+	else
+    		echo "0"
+        fi
+	else
+	echo "0"
+	fi
+;;
+
+esac

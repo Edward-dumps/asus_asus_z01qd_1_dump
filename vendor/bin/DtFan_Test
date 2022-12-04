@@ -1,0 +1,45 @@
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (On), 2 (RPM)"
+	exit
+fi
+
+if [ "$CMD" -lt "0" -o "$CMD" -gt "2" ]; then
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (On), 2 (RPM)"
+	exit
+fi
+if [ "$CMD" -eq "0" ]; then
+	echo 59 0 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	sleep 1
+	result=`cat /sys/class/hwmon/Inbox_Fan/device/fan1_input`
+	if [ "$result" -eq "0" ]; then
+		echo PASS
+	else
+		echo FAIL
+	fi
+
+elif [ "$CMD" -eq "1" ]; then
+	echo 59 1 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	sleep 1
+	result=`cat /sys/class/hwmon/Inbox_Fan/device/fan1_input`
+	if [ "$result" -eq "0" ]; then
+		echo FAIL
+	else
+		echo PASS
+	fi
+
+elif [ "$CMD" -eq "2" ]; then
+	echo 59 01 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	echo 24 00 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	echo 70 7f > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	echo EE 14 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	echo EE 10 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	echo 24 01 > /sys/class/hwmon/Inbox_Fan/device/i2c_write_reg
+	sleep 1
+	result=`cat /sys/class/hwmon/Inbox_Fan/device/fan1_input`
+	echo $result
+fi
+

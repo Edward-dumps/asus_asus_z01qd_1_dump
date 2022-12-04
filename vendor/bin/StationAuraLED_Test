@@ -1,0 +1,83 @@
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (Red), 2 (Green), 3 (Blue)"
+	exit
+fi
+
+if [ "$CMD" -lt "0" -o "$CMD" -gt "3" ]; then
+	echo "CMD not assigned !"
+	echo " 0 (Off), 1 (Red), 2 (Green), 3 (Blue)"
+	exit
+fi
+
+fw_ver=`cat /sys/class/leds/aura_sync_station/fw_ver`
+
+if [ "${fw_ver}" == "FW VER : 0x0" ]; then
+    echo "Enable VDD"
+    echo 1 > /sys/class/leds/aura_sync_station/VDD
+    sleep 1
+else
+    echo "VDD already enable"
+fi
+
+if [ "$CMD" -eq "0" ]; then
+	echo 0 > /sys/class/leds/aura_sync_station/mode
+	echo 1 > /sys/class/leds/aura_sync_station/apply
+
+	result1=`cat /sys/class/leds/aura_sync_station/mode`
+
+	if [ "$result1" -eq "0" ]; then
+		echo 1
+	else
+		echo 0
+	fi
+
+elif [ "$CMD" -eq "1" ]; then
+	echo 255 > /sys/class/leds/aura_sync_station/red_pwm
+	echo 0 > /sys/class/leds/aura_sync_station/green_pwm
+	echo 0 > /sys/class/leds/aura_sync_station/blue_pwm
+	
+	echo 1 > /sys/class/leds/aura_sync_station/mode
+	echo 1 > /sys/class/leds/aura_sync_station/apply
+
+	result=`cat /sys/class/leds/aura_sync_station/red_pwm`
+	if [ "$result" -eq "255" ]; then
+		echo 1
+	else
+		echo 0
+	fi
+
+elif [ "$CMD" -eq "2" ]; then
+	echo 0 > /sys/class/leds/aura_sync_station/red_pwm
+	echo 255 > /sys/class/leds/aura_sync_station/green_pwm
+	echo 0 > /sys/class/leds/aura_sync_station/blue_pwm
+	
+	echo 1 > /sys/class/leds/aura_sync_station/mode
+	echo 1 > /sys/class/leds/aura_sync_station/apply
+
+	result=`cat /sys/class/leds/aura_sync_station/green_pwm`
+	if [ "$result" -eq "255" ]; then
+		echo 1
+	else
+		echo 0
+	fi
+
+elif [ "$CMD" -eq "3" ]; then
+	echo 0 > /sys/class/leds/aura_sync_station/red_pwm
+	echo 0 > /sys/class/leds/aura_sync_station/green_pwm
+	echo 255 > /sys/class/leds/aura_sync_station/blue_pwm
+	
+	echo 1 > /sys/class/leds/aura_sync_station/mode
+	echo 1 > /sys/class/leds/aura_sync_station/apply
+
+	result=`cat /sys/class/leds/aura_sync_station/blue_pwm`
+	if [ "$result" -eq "255" ]; then
+		echo 1
+	else
+		echo 0
+	fi
+fi
+
+

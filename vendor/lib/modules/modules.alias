@@ -1,0 +1,43 @@
+# Aliases extracted from modules themselves.
+alias platform:sdm845-asoc-snd snd_soc_sdm845
+alias of:N*T*Cqcom,sdm845-asoc-snd-stubC* snd_soc_sdm845
+alias of:N*T*Cqcom,sdm845-asoc-snd-stub snd_soc_sdm845
+alias of:N*T*Cqcom,sdm845-asoc-snd-tavilC* snd_soc_sdm845
+alias of:N*T*Cqcom,sdm845-asoc-snd-tavil snd_soc_sdm845
+alias asus:ene-8k41 ene_8k41_pogo
+alias of:N*T*Cqcom,llcc-perfmonC* llcc_perfmon
+alias of:N*T*Cqcom,llcc-perfmon llcc_perfmon
+alias of:N*T*Cqcom,wcd-dsp-mgrC* snd_soc_wcd9xxx
+alias of:N*T*Cqcom,wcd-dsp-mgr snd_soc_wcd9xxx
+alias of:N*T*Cqcom,audio-ref-clkC* snd_soc_wcd9xxx
+alias of:N*T*Cqcom,audio-ref-clk snd_soc_wcd9xxx
+alias platform:gpio-keys station_key
+alias of:N*T*Cstation-keysC* station_key
+alias of:N*T*Cstation-keys station_key
+alias i2c:tabla digital2 wcd_core
+alias i2c:tabla digital1 wcd_core
+alias i2c:tabla analog wcd_core
+alias i2c:tabla top level wcd_core
+alias of:N*T*Cqcom,wcd9xxx-i2cC* wcd_core
+alias of:N*T*Cqcom,wcd9xxx-i2c wcd_core
+alias of:N*T*Cqcom,tasha-i2c-pgdC* wcd_core
+alias of:N*T*Cqcom,tasha-i2c-pgd wcd_core
+alias of:N*T*Cqcom,tavil-i2cC* wcd_core
+alias of:N*T*Cqcom,tavil-i2c wcd_core
+alias asus:ene-8k41 ene_8k41_inbox
+alias asus:ene-8k41 ene_8k41_power
+alias fs-tntfs tntfs
+alias i2c:nct7802 nct7802
+alias i2c:fts_ts_station jedi_station_touch
+alias pci:v000017CBd00001201sv*sd*bc*sc*i* wil6210
+alias pci:v00001AE9d00000302sv*sd*bc*sc*i* wil6210
+alias pci:v00001AE9d00000310sv*sd*bc*sc*i* wil6210
+alias of:N*T*Cqcom,wcd-spi-v2C* snd_soc_wcd_spi
+alias of:N*T*Cqcom,wcd-spi-v2 snd_soc_wcd_spi
+alias platform:swr-wcd swr_wcd_ctrl
+alias fs-texfat texfat
+alias of:N*T*Cqcom,wcd-pinctrlC* pinctrl_wcd
+alias of:N*T*Cqcom,wcd-pinctrl pinctrl_wcd
+alias of:N*T*Cqcom,wcd-dsp-glinkC* wcd_dsp_glink
+alias of:N*T*Cqcom,wcd-dsp-glink wcd_dsp_glink
+alias i2c:tfa9894 snd_soc_tfa9894

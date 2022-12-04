@@ -1,0 +1,46 @@
+#!/system/bin/sh
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "Please enter FingerPrintTest parameter!"
+	exit
+fi
+
+count=0
+status=0
+
+if [ "$CMD" -eq "0" ]; then
+	setprop persist.vendor.asus.fp.test.cmd 1
+	while [ "$count" -le "5" ]
+	do
+		status=`getprop persist.vendor.asus.fp.test.result`
+		if [ "$status" -eq "1" ]; then
+			break
+		else
+			count=$(( count + 1 ))
+			sleep 1
+		fi
+	done
+
+elif [ "$CMD" -eq "1" ]; then
+	setprop persist.vendor.asus.fp.test.cmd 2
+	while [ "$count" -le "10" ]
+	do
+		status=`getprop persist.vendor.asus.fp.test.result`
+		if [ "$status" -eq "1" ]; then
+			break
+		else
+			count=$(( count + 1 ))
+			sleep 1
+		fi
+	done
+fi
+
+if [ "$status" -eq "1" ]; then
+	echo PASS
+else
+	echo FAIL
+fi
+
+setprop persist.vendor.asus.fp.test.cmd 0
+setprop persist.vendor.asus.fp.test.result 0

@@ -1,0 +1,8 @@
+#!/vendor/bin/sh
+
+LOG_TAG=sxuvl_cmd
+
+log -t $LOG_TAG -p d sxuvl_cmd kill...
+
+cat /data/misc/sxuvlcd/sxuvlcd.pid | xargs kill -9
+cat /data/misc/sxuvlcd/sxuvl_auto.pid | xargs kill -9

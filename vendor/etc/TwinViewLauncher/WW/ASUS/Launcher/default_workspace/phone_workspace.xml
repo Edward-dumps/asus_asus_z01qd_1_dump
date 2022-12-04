@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites>
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+    <favorite
+        className="com.google.android.apps.messaging.ui.ConversationListActivity"
+        packageName="com.google.android.apps.messaging"
+        container="-103"
+        screen="0"
+        x="0"
+        y="0" />
+    <favorite
+        className="com.google.android.apps.chrome.Main"
+        packageName="com.android.chrome"
+        container="-103"
+        screen="1"
+        x="1"
+        y="0" />
+    <favorite
+        className="com.asus.gamecenter.GameCenterActivity"
+        packageName="com.asus.gamecenter"
+        container="-103"
+        screen="2"
+        x="2"
+        y="0" />
+    <favorite
+        className="com.dts.freefireth.FFMainActivity"
+        packageName="com.dts.freefireth"
+        container="-103"
+        screen="3"
+        x="3"
+        y="0" />
+    <favorite
+        className="com.gameloft.android.ANMP.GloftA9HM.MainActivity"
+        packageName="com.gameloft.android.ANMP.GloftA9HM"
+        container="-103"
+        screen="4"
+        x="4"
+        y="0" />
+</favorites>

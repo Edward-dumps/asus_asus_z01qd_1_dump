@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites>
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+    <favorite
+        className="com.google.android.apps.messaging.ui.ConversationListActivity"
+        packageName="com.google.android.apps.messaging"
+        container="-103"
+        screen="0"
+        x="0"
+        y="0" />
+    <favorite
+        className="com.google.android.apps.chrome.Main"
+        packageName="com.android.chrome"
+        container="-103"
+        screen="1"
+        x="1"
+        y="0" />
+    <favorite
+        className="com.android.vending.AssetBrowserActivity"
+        packageName="com.android.vending"
+        container="-103"
+        screen="2"
+        x="2"
+        y="0" />
+    <favorite
+        className="com.google.android.googlequicksearchbox.SearchActivity"
+        packageName="com.google.android.googlequicksearchbox"
+        container="-103"
+        screen="3"
+        x="3"
+        y="0" />
+    <favorite
+        className="com.google.android.gm.ConversationListActivityGmail"
+        packageName="com.google.android.gm"
+        container="-103"
+        screen="4"
+        x="4"
+        y="0" />
+    <favorite
+        className="com.google.android.maps.MapsActivity"
+        packageName="com.google.android.apps.maps"
+        container="-103"
+        screen="5"
+        x="5"
+        y="0" />
+    <favorite
+        className="com.google.android.youtube.app.honeycomb.Shell$HomeActivity"
+        packageName="com.google.android.youtube"
+        container="-103"
+        screen="6"
+        x="6"
+        y="0" />
+    <favorite
+        className="com.google.android.apps.docs.app.NewMainProxyActivity"
+        packageName="com.google.android.apps.docs"
+        container="-103"
+        screen="7"
+        x="7"
+        y="0" />
+
+    <favorite
+        className="com.android.music.activitymanagement.TopLevelActivity"
+        packageName="com.google.android.music"
+        container="-103"
+        screen="8"
+        x="8"
+        y="0" />
+    <favorite
+        className="com.google.android.youtube.videos.EntryPoint"
+        packageName="com.google.android.videos"
+        container="-103"
+        screen="9"
+        x="9"
+        y="0" />
+    <favorite
+        className="com.google.android.apps.tachyon.MainActivity"
+        packageName="com.google.android.apps.tachyon"
+        container="-103"
+        screen="10"
+        x="10"
+        y="0" />
+    <favorite
+        className="com.google.android.apps.photos.home.HomeActivity"
+        packageName="com.google.android.apps.photos"
+        container="-103"
+        screen="11"
+        x="11"
+        y="0" />
+    <favorite
+        className="com.android.calendar.AllInOneActivity"
+        packageName="com.google.android.calendar"
+        container="-103"
+        screen="12"
+        x="12"
+        y="0" />
+</favorites>

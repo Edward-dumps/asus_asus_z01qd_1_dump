@@ -1,0 +1,1 @@
+cat /sys/class/leds/aura_sync_station/fw_ver
