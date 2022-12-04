@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<game-dnd-policy version="6" toast_enabled="true"
+        activity_enabled="true" vibration_enabled="true" custom_activity_enabled="true">
+    <!-- About toast / overlay window -->
+    <allow-overlay-window package="com.asus.calculator" game-mode="GAME_DND_CALL"/>
+    <allow-overlay-window package="com.asus.gamewidget" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <allow-overlay-window package="com.asus.launcher" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <allow-overlay-window package="com.asus.launcher3" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <allow-overlay-window package="com.asus.taskwidget" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <allow-overlay-window package="com.facebook.orca" game-mode="GAME_DND_CALL"/>
+    <!-- About activity -->
+    <deny-activity component="com.facebook.orca/com.facebook.rtc.activities.WebrtcIncallFragmentHostActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.facebook.orca/com.facebook.rtc.activities.WebrtcResizeableIncallFragmentHostActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.skype.raider/com.skype.raider.Main" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.tencent.mm/com.tencent.mm.plugin.voip.ui.VideoActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteFull" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VChatActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="jp.naver.line.android/com.linecorp.voip.ui.base.VoIPServiceActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="jp.naver.line.android/jp.naver.line.android.activity.pushdialog.PushDialogActivity" game-mode="GAME_DND_NOTIFICATION"/>
+    <deny-activity component="jp.naver.line.android/jp.naver.line.android.activity.pushdialog.PushDialogSleepActivity" game-mode="GAME_DND_NOTIFICATION"/>
+    <deny-activity component="com.viber.voip/com.viber.voip.phone.PhoneFragmentActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.viber.voip/com.viber.voip.WakeUpViberActivity" game-mode="GAME_DND_CALL"/>
+    <deny-activity component="com.whatsapp/com.whatsapp.voipcalling.VoipActivityV2" game-mode="GAME_DND_CALL"/>
+    <!-- About Sound -->
+    <deny-sound package="com.facebook.orca" usage="USAGE_VOICE_COMMUNICATION" game-mode="GAME_DND_CALL"/>
+    <deny-sound package="com.tencent.mm" usage="USAGE_VOICE_COMMUNICATION" game-mode="GAME_DND_CALL"/>
+    <deny-sound package="com.tencent.mobileqq" usage="USAGE_MEDIA" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <!-- About vibration -->
+    <deny-vibration package="com.facebook.orca" usage="USAGE_UNKNOWN" game-mode="GAME_DND_CALL"/>
+    <deny-vibration package="com.facebook.orca" usage="USAGE_NOTIFICATION" game-mode="GAME_DND_CALL"/>
+    <deny-vibration package="com.skype.raider" usage="USAGE_UNKNOWN" game-mode="GAME_DND_CALL"/>
+    <deny-vibration package="com.tencent.mm" usage="USAGE_UNKNOWN" game-mode="GAME_DND_CALL"/>
+    <deny-vibration package="com.tencent.mobileqq" usage="USAGE_UNKNOWN" game-mode="GAME_DND_NOTIFICATION | GAME_DND_CALL"/>
+    <deny-vibration package="com.whatsapp" usage="USAGE_UNKNOWN" game-mode="GAME_DND_CALL"/>
+    <!--- About custom activity, used for GAME_DND_CUSTOM_ACTIVITY -->
+    <custom-activity component="com.tencent.mm/com.tencent.mm.plugin.voip.ui.VideoActivity" show="true" game-mode="GAME_DND_CALL" />
+    <custom-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteActivity" show="true" game-mode="GAME_DND_CALL" />
+    <custom-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteFull" show="true" game-mode="GAME_DND_CALL" />
+    <custom-activity component="com.tencent.mobileqq/com.tencent.av.ui.VChatActivity" show="false" game-mode="GAME_DND_CALL" />
+</game-dnd-policy>

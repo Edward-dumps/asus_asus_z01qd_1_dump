@@ -1,0 +1,47 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.actionable_compatible_property.enabled=false
+ro.build.servaddr=1
+persist.asus.micfansettings=1
+persist.odm.asus.batpolicy=0
+persist.odm.asus.station_sleep=true
+ro.secure=1
+security.perf_harden=1
+ro.adb.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+dalvik.vm.usejit=true
+dalvik.vm.usejitprofiles=true
+dalvik.vm.dexopt.secondary=true
+dalvik.vm.appimageformat=lz4
+pm.dexopt.first-boot=quicken
+pm.dexopt.boot=verify
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.inactive=verify
+pm.dexopt.shared=speed
+dalvik.vm.dex2oat-minidebuginfo=true
+debug.atrace.tags.enableflags=0
+ro.config.media_vol_default=9
+setupwizard.feature.deferred_setup_suggestion=false
+setupwizard.feature.deferred_setup_notification=false
+ro.setupwizard.suppress_d2d=false
+ro.setupwizard.suppress_d2d_nfc=true
+ro.opa.eligible_device=true
+ro.setupwizard.mode=OPTIONAL
+setupwizard.feature.predeferred_enabled=false
+ro.com.google.gmsversion=9_201906
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Tue Oct 27 13:04:51 CST 2020
+ro.bootimage.build.date.utc=1603775091
+ro.bootimage.build.fingerprint=asus/WW_Z01QD/ASUS_Z01QD_1:9/PKQ1.190101.001/16.0420.2009.39-0:user/release-keys
+persist.sys.usb.config=none
+

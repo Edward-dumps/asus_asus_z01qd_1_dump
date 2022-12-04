@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fullscreen package="air.com.peppapig.paintbox" />
+    <fullscreen package="com.bilibili.app.in" />
+    <fullscreen package="com.camera.beautycam" />
+    <fullscreen package="com.cht.easyrent.irent" />
+    <fullscreen package="com.cwj.hsing" />
+    <fullscreen package="com.dianping.v1" />
+    <fullscreen package="com.facebook.lite" />
+    <fullscreen package="com.feib.appbank" />
+    <fullscreen package="com.gameloft.android.ANMP.GloftA9HM" />
+    <fullscreen package="com.google.android.media.gts" />
+    <fullscreen package="com.google.samples.apps.cardboarddemo" />
+    <fullscreen package="com.mobile.legends" />
+    <fullscreen package="com.netease.idv_tw.googleplay" />
+    <fullscreen package="com.netflix.mediaclient" />
+    <fullscreen package="com.ninemgames.tennis.google" />
+    <fullscreen package="com.opera.mini.native" />
+    <fullscreen package="com.uc.vmate" />
+    <fullscreen package="com.vng.inputmethod.labankey" />
+    <fullscreen package="jp.gungho.padHT" />
+    <fullscreen package="tv.pluto.android" />
+    <sixteen-nine package="com.appon.kitchenstory" />
+    <sixteen-nine package="com.asus.facedesigner" />
+    <sixteen-nine package="com.fingersoft.makemore" />
+    <sixteen-nine package="com.jiannianggame.tw" />
+    <sixteen-nine package="com.square_enix.android_googleplay.FFBEWW" />
+    <sixteen-nine package="jp.co.mixi.monsterstrikeTW" />
+    <sixteen-nine package="si.pilcom.apps.pizzamakerkids" />
+    <sixteen-nine package="tw.wonderplanet.CrashFever" />
+    <sixteen-nine package="tw.sonet.wiz" />
+</config>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policy>
+    <app pkg="com.bankcomm.Bankcomm" />
+    <app pkg="com.ss.android.article.news" />
+    <app pkg="com.qq.qcloud" />
+</policy>

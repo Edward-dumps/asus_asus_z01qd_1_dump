@@ -1,0 +1,3 @@
+<permissions>
+    <feature name="com.google.android.feature.TURBO_PRELOAD" />
+</permissions>

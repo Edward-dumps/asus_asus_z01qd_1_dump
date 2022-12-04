@@ -1,0 +1,10 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"鋼鐵境地","description":"在堅硬又強悍的金屬鋼條困境中，盡力突出重圍。","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"玩家境地","description":"在遊戲玩家的國度裡，我們有著如蜂巢結構般緊密的連結。","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"極速連結","description":"在高速傳遞的虛擬世界中，我們彼此飛速的連結與串聯。","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"紅色力量","description":"遊戲玩家們內心沸騰的熱血，猶如一團團紅色能量不斷地聚集與擴張。","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"創世紀啟航","description":"準備航向未知的空間，進入虛擬世界探險！","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"覺醒時刻","description":"仰望天空，渴望內心的覺醒與反叛的能量得到釋放。","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"未來城市","description":"猶如晶體構造堆疊的城市，勾勒出科幻的新世界。","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"即刻覺醒","description":"如智慧生命體的核心甦醒，散發光芒與無限能量。","author":""},
+{"wallpaper":"default_slideshow_wallpaper09","title":"超核心","description":"全面啟動無與倫比的高速傳輸與強大效能！","author":""},
+{"wallpaper":"default_slideshow_wallpaper10","title":"飆速進擊","description":"衝吧！讓源源不絕的能量蓄勢待發，讓每一次的進擊都流暢無比。","author":""}]

@@ -1,0 +1,10 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"Iron Republic","description":"Escape the metal maze in the Iron Republic.","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"Gamers Domain","description":"In the gamers domain, connections is like a honeycomb that interlinked seamlessly.","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"Extreme Connections","description":"In the virtual world of high-speed connections, we are all comprehensively connected.","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"Red Force","description":"The red force pulses like the passion of hot-blooded gamers.","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"Virtual Adventure","description":"Prepare to enter the unknown space of a virtual world for an adventure!","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"Awaken Moment","description":"Looking up to the sky evoke the desire for inner awakening and the release of rebellious energy.","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"Future Metropolis","description":"A future metropolis built like crystal stacked on top of each other.","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"Instant Activation","description":"The core of an intelligent life emitting light and infinite energy.","author":""},
+{"wallpaper":"default_slideshow_wallpaper09","title":"Supercore","description":"Full throttle for an unmatched experience of high-speed transmission and powerful performance.","author":""},
+{"wallpaper":"default_slideshow_wallpaper10","title":"Energy Stream","description":"The fast flowing of the energy stream creates an exhilarating gaming experience.","author":""}]

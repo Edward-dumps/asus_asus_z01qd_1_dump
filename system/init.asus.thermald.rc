@@ -1,0 +1,213 @@
+# ASUS_BSP+++ Show_Cai
+service AThermalService /vendor/bin/init.asus.thermal_conf.sh
+        class core
+	seclabel u:r:thermal-engine:s0
+        user root
+        oneshot
+        disabled
+        
+service onFgAppChanged /system/vendor/bin/onFgAppChanged
+        class core
+        user root
+        oneshot
+        disabled
+        seclabel u:r:onFgAppChanged:s0
+# ASUS_BSP--- Show_Cai
+	
+# ASUS_BSP+++ Clay_Wang
+service ThermalSysService /system/etc/init.asus.system_command.sh
+        class core
+        user root
+        oneshot
+        disabled
+# ASUS_BSP+++ Clay_Wang	
+
+# ASUS_BSP +++ Clay_Wang
+service GripCheckK /vendor/bin/grip_fpc_check.sh
+        class core
+		seclabel u:r:thermal-engine:s0
+        user root
+        oneshot
+		disabled
+#        seclabel u:r:GripInterface:s0
+# ASUS_BSP --- Clay_Wang
+
+# ASUS_BSP+++ Shawn_Huang For adsp Software Silent Reset
+#service adsp_ssr /system/vendor/bin/init.asus.adsp_ssr.sh
+#        class core
+#        user root
+#        oneshot
+#        disabled
+#        seclabel u:r:AThermalService:s0
+
+#service sns_dump_request /system/vendor/bin/init.asus.sns_dump_request.sh
+#        class core
+#        user root
+#        oneshot
+#        disabled
+#        seclabel u:r:AThermalService:s0
+# ASUS_BSP--- Shawn_Huang For adsp Software Silent Reset
+
+# ASUS_BSP+++ Clay_Wang
+on post-fs-data
+#	setprop sys.create.thermal_link 1
+#	setprop debug.create.thermal_link 1
+	setprop vendor.thermal.create.thermal_link 1
+	setprop persist.asus.thermalfan 1
+	start AThermalService
+# ASUS_BSP--- Clay_Wang
+
+# ASUS_BSP+++ Clay_Wang "For external interface"
+on property:vendor.grip.checkfpc=*
+	start GripCheckK
+# ASUS_BSP--- Clay_Wang "For external interface"
+
+# ASUS_BSP+++ Clay_Wang
+on property:sys.boot_completed=1
+#	setprop sys.create.thermal_link 1
+#	setprop debug.create.thermal_link 1
+	setprop vendor.grip.checkfpc 1
+	setprop vendor.thermal.create.thermal_link 1
+	start AThermalService
+
+on property:debug.thermal_engine.reset=1
+	start AThermalService
+# ASUS_BSP--- Clay_Wang
+
+# ASUS_BSP+++ VictorFu "For watching foreground app"
+#on property:sys.foregroundapp=*
+#        start onFgAppChanged
+# ASUS_BSP--- VictorFu "For watching foreground app"
+
+# ASUS_BSP+++ Shawn_Huang For adsp Software Silent Reset
+#on property:sys.asus.ssc.reset=1
+#	start adsp_ssr
+#on property:sys.asus.accelerometer_on=0
+#        start sns_dump_request
+# ASUS_BSP--- Shawn_Huang For adsp Software Silent Reset
+
+# ASUS_BSP+++ Clay_Wang "dumpsys sensorservice"
+on property:sys.thermal.dumpsys=1
+        start ThermalSysService
+# ASUS_BSP--- Clay_Wang "dumpsys sensorservice"
+
+# ASUS_BSPShow_Cai +++ For power key turn on screen and enable touch
+on property:sys.asus.psensor.enable_touch=1
+	write /sys/class/sensors/psensor/enable_touch 1
+	setprop sys.asus.psensor.enable_touch 0
+# ASUS_BSPShow_Cai --- For power key turn on screen and enable touch
+
+# ASUS_BSP+++ Shawn_Huang
+# service BSdisable /system/bin/sh /etc/onBodysarDisable.sh
+#         class core
+#         user root
+#         oneshot
+#         disabled
+# ASUS_BSP--- Shawn_Huang
+
+# ASUS_BSP+++ Shawn_Huang
+#service set_deftime /system/bin/sh /system/vendor/etc/init.asus.set_time.sh
+#        class core
+#        user root
+#        oneshot
+#        disabled
+# ASUS_BSP--- Shawn_Huang
+
+# ASUS_BSP+++ Shawn_Huang set default time
+#on property:sys.boot_completed=1
+#	start set_deftime
+# ASUS_BSP--- Shawn_Huang set default time
+
+# ASUS_BSP+++ ShawnHuang "For disable bodysar"
+# on property:gsm.bodysar.disable=*
+# 	start BSdisable
+# ASUS_BSP--- ShawnHuang "For disable bodysar"
+
+# ASUS_BSP+++ VictorFu "For Ultimate mode & disable thermald"
+#on property:sys.ultimate.mode.enabled=*
+#	start onFgAppChanged
+#on property:sys.thermald.disabled=*
+#	start onFgAppChanged
+# ASUS_BSP--- VictorFu "For Ultimate mode & disable thermald"
+
+# ASUS_BSP+++ VictorFu "For pad mode"
+# on property:sys.config.resolution=*
+# 	start onFgAppChanged
+# ASUS_BSP--- VictorFu "For pad mode"
+
+# ASUS_BSP+++ Clay_Wang "For Grip Calibration"
+on property:persist.grip.calibration=*
+	start ThermalSysService
+on property:debug.grip.cal_test_result=*
+	start GripCalibration
+# ASUS_BSP--- Clay_Wang "For Grip Calibration"
+
+
+# ASUS_BSP+++ Clay_Wang "For Grip AP interface"
+on property:persist.grip.enable=*
+	write /proc/driver/grip_en ${persist.grip.enable}
+on property:persist.grip.performance=*
+	write /proc/driver/grip_boost ${persist.grip.performance}
+on property:persist.grip.frame_rate=*
+	write /proc/driver/grip_frame_rate ${persist.grip.frame_rate}
+on property:persist.grip.raw.enable=*
+	write /proc/driver/grip_raw_en ${persist.grip.raw.enable}
+on property:persist.grip.tap1.enable=*
+	write /proc/driver/grip_tap1_en ${persist.grip.tap1.enable}
+on property:persist.grip.tap2.enable=*
+	write /proc/driver/grip_tap2_en ${persist.grip.tap2.enable}
+on property:persist.grip.tap3.enable=*
+	write /proc/driver/grip_tap3_en ${persist.grip.tap3.enable}
+on property:persist.grip.tap.sensitive.mode=*
+        write /proc/driver/grip_tap_sense_en ${persist.grip.tap.sensitive.mode}
+on property:persist.grip.squeeze.enable=*
+	write /proc/driver/grip_squeeze_en ${persist.grip.squeeze.enable}
+on property:persist.grip.squeeze.short.limit=*
+        write /proc/driver/grip_squeeze_short_limit ${persist.grip.squeeze.short.limit}
+on property:persist.grip.squeeze.short.duration=*
+	write /proc/driver/grip_squeeze_short_dur ${persist.grip.squeeze.short.duration}
+on property:persist.grip.squeeze.long.duration=*
+	write /proc/driver/grip_squeeze_long_dur ${persist.grip.squeeze.long.duration}
+	
+on property:persist.grip.squeeze.up.rate=*
+	write /proc/driver/grip_squeeze_up_rate ${persist.grip.squeeze.up.rate}
+on property:persist.grip.squeeze.up.total=*
+	write /proc/driver/grip_squeeze_up_total ${persist.grip.squeeze.up.total}
+on property:persist.grip.squeeze.drop.rate=*
+	write /proc/driver/grip_squeeze_drop_rate ${persist.grip.squeeze.drop.rate}
+on property:persist.grip.squeeze.drop.total=*
+	write /proc/driver/grip_squeeze_drop_total ${persist.grip.squeeze.drop.total}
+	
+on property:persist.grip.tap1.threshold=*
+	write /proc/driver/grip_tap1_force ${persist.grip.tap1.threshold}
+on property:persist.grip.tap2.threshold=*
+	write /proc/driver/grip_tap2_force ${persist.grip.tap2.threshold}
+on property:persist.grip.tap3.threshold=*
+	write /proc/driver/grip_tap3_force ${persist.grip.tap3.threshold}
+on property:persist.grip.tap1.fup.threshold=*
+	write /proc/driver/grip_tap1_fup_force ${persist.grip.tap1.fup.threshold}
+on property:persist.grip.tap2.fup.threshold=*
+	write /proc/driver/grip_tap2_fup_force ${persist.grip.tap2.fup.threshold}
+on property:persist.grip.tap3.fup.threshold=*
+	write /proc/driver/grip_tap3_fup_force ${persist.grip.tap3.fup.threshold}
+on property:persist.grip.tap1.duration=*
+	write /proc/driver/grip_tap1_dur ${persist.grip.tap1.duration}
+on property:persist.grip.tap2.duration=*
+	write /proc/driver/grip_tap2_dur ${persist.grip.tap2.duration}
+on property:persist.grip.tap3.duration=*
+	write /proc/driver/grip_tap3_dur ${persist.grip.tap3.duration}
+#on property:persist.grip.swipe1.velocity=*
+#	write /proc/driver/grip_swipe1_v ${persist.grip.swipe1.velocity}
+#on property:persist.grip.swipe2.velocity=*
+#	write /proc/driver/grip_swipe2_v ${persist.grip.swipe2.velocity}
+#on property:persist.grip.swipe3.velocity=*
+#	write /proc/driver/grip_swipe3_v ${persist.grip.swipe3.velocity}
+#on property:persist.grip.swipe1.len=*
+#	write /proc/driver/grip_swipe1_len ${persist.grip.swipe1.len}
+#on property:persist.grip.swipe2.len=*
+#	write /proc/driver/grip_swipe2_len ${persist.grip.swipe2.len}
+#on property:persist.grip.swipe3.len=*
+#	write /proc/driver/grip_swipe3_len ${persist.grip.swipe3.len}
+on property:persist.grip.squeeze.threshold=*
+	write /proc/driver/grip_squeeze_force ${persist.grip.squeeze.threshold}
+# ASUS_BSP--- Clay_Wang "For Grip AP interface"
